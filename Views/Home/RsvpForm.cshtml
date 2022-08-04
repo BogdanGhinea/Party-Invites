@@ -1,0 +1,56 @@
+﻿@model PartyInvites2.Models.GuestResponse
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link href="/css/StyleSheet.css" rel="stylesheet" />
+    <link href="~/lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
+    <title>RsvpForm</title>
+</head>
+<body>
+    <h5 class="bg-primary text-white text-center m-2 p-2">RSVP</h5>
+    <form class="m-2" asp-action="RsvpForm" method="post">
+        <div class="form-group">
+            <div class="form-group">
+                <label asp-for="Name">Name:</label>
+                <input asp-for="Name" class="form-control"/> 
+            </div>
+            <div>
+                <span asp-validation-for="Name"></span>
+            </div>
+           
+            <div class="form-group">
+                <label asp-for="Phone">Phone:</label>
+                <input asp-for="Phone" class="form-control"/>
+            </div>
+            <div>
+                <span asp-validation-for="Phone"></span>
+            </div>
+           
+            <div class="form-group">
+                <label asp-for="Email">Email:</label>
+                <input asp-for="Email" class="form-control"/>
+            </div>
+            <div>
+                <span asp-validation-for="Email"></span>
+            </div>
+            
+            <div class="form-group">
+                <label asp-for="WillAttend">Will you attend?</label>
+                <select asp-for="WillAttend" class="form-control">
+                    <option value="">Chose an option:</option>
+                    <option value="true">Will Attend</option>
+                    <option value="false">Will NOT Attend</option>
+                </select>
+                <span asp-validation-for="WillAttend"></span>
+            </div>
+        </div>
+        <button class="btn btn-primary" type="submit" >Submit RSVP</button>
+
+    </form>
+
+</body>
+</html>
